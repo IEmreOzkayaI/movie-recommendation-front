@@ -21,7 +21,7 @@ const LogInCard = () => {
 	if (data) {
 		localStorage.setItem("token", data.token);
 		localStorage.setItem("user", JSON.stringify(data.user));
-		window.location.replace("/home");
+		window.location.replace("/");
 		clearInfo();
 	}
 

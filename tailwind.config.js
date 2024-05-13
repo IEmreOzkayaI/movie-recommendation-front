@@ -15,7 +15,12 @@ module.exports = {
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],
 				teko: ["Teko", "sans-serif"],
-        wallpoet: ["Wallpoet", "sans-serif"],
+				wallpoet: ["Wallpoet", "sans-serif"],
+			},
+			gridTemplateRows: {
+				"third-screen": "repeat(3, minmax(0, calc(33.333vh - 50px)))",
+				"half-screen": "repeat(2, minmax(0, calc(50vh - 75px)))",
+				"whole-screen": "repeat(2, minmax(0, calc(100vh - 150px)))",
 			},
 			colors: {
 				border: "hsl(var(--border))",

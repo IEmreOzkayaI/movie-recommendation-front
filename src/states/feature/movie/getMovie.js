@@ -7,36 +7,36 @@ const initialState = {
 };
 
 const reducers = {
-	addPostProgress: (state) => {
+	getMovieProgress: (state) => {
 		state.isLoading = true;
 		state.error = false;
 		state.data = null;
 	},
-	addPostFailure: (state, {payload}) => {
+	getMovieFailure: (state, {payload}) => {
 		state.isLoading = false;
 		state.error = payload;
 		state.data = null;
 	},
-	addPostSuccess: (state, {payload}) => {
+	getMovieSuccess: (state, {payload}) => {
 		state.isLoading = false;
 		state.error = false;
 		state.data = payload;
 	},
-	clearAddPostInfo: (state) => {
+	clearGetMovieInfo: (state) => {
 		state.isLoading = false;
 		state.error = false;
 		state.data = null;
 	},
 };
 
-const addPostSlice = createSlice({
-	name: "addPostSlice",
+const getMovieSlice = createSlice({
+	name: "getMovieSlice",
 	initialState,
 	reducers,
 });
 
-export const addPost = createAction("addPostSlice/addPost");
-export const addPostStatus = (state) => state?.addPostSlice;
+export const getMovie = createAction("getMovieSlice/getMovie");
+export const getMovieStatus = (state) => state?.getMovieSlice;
 
-export const {addPostProgress, addPostFailure, addPostSuccess, clearAddPostInfo} = addPostSlice.actions;
-export default addPostSlice.reducer;
+export const {getMovieProgress, getMovieFailure, getMovieSuccess, clearGetMovieInfo} = getMovieSlice.actions;
+export default getMovieSlice.reducer;

@@ -1,9 +1,9 @@
-import Posts from "@/components/posts";
+import Movies from "@/components/movies";
 
 const Home = () => {
 	return (
 		<div className='min-h-screen sw-full'>
-			<Posts />
+			<Movies />
 		</div>
 	);
 };

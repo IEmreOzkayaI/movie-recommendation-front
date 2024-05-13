@@ -2,7 +2,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { CircleUser } from "lucide-react";
 import { Link } from "react-router-dom";
 import ButtonFamily from "../buttonFamily";
-import PostDrawer from "../postDrawer";
+import MovieDrawer from "../drawer";
 import { Button } from "../ui/button";
 import useLogOut from "./useLogout";
 import useNavHide from "./useNavHide";
@@ -17,10 +17,10 @@ const Navbar = ({isOpen}) => {
 	return (
 		<div>
 			<header className='flex h-14 items-center justify-between  border-b bg-muted/40 px-4 lg:h-[80px] lg:px-6'>
-				<Link to='/home'>
+				<Link to='/'>
 					<div className='text-2xl font-wallpoet'>PURE</div>
 				</Link>
-				{isOpen && <PostDrawer />}
+				{isOpen && <MovieDrawer />}
 				{!isOpen && <ButtonFamily ghost={"Sign Up"} ghostLink={"/signup"} primary={"Log In"} primaryLink={"/login"} />}
 				{isOpen && (
 					<DropdownMenu className='relative'>

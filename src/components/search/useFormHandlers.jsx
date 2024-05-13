@@ -1,14 +1,17 @@
+import {clearLogInInfo, logIn} from "@/states/feature/auth/login";
 import {useDispatch} from "react-redux";
 import showToast from "../toast";
-import {clearAddPostInfo,addPost} from "@/states/feature/post/addPost";
+import {getMovie} from "@/states/feature/movie/getMovie";
 
 const useFormHandlers = () => {
 	const dispatch = useDispatch();
 
 	const onSubmit = (data, e) => {
 		if (e) e.preventDefault();
+
 		showToast("You submitted the following values:", JSON.stringify(data, null, 2));
-		dispatch(addPost(data));
+		const payload = {title: data.title};
+		dispatch(getMovie(payload));
 	};
 
 	const onError = (errors) => {
@@ -16,7 +19,7 @@ const useFormHandlers = () => {
 	};
 
 	const clearInfo = () => {
-		dispatch(clearAddPostInfo());
+		dispatch(clearLogInInfo());
 	};
 
 	return {onSubmit, onError, clearInfo};
