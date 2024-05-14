@@ -21,7 +21,6 @@ function* getMovieStatus(action) {
 }
 
 function* getMovieWrapper(payload) {
-	console.log("payload", payload);
 	return yield new Promise((resolve, reject) => {
 		axios
 			.get(`${API.BACKEND_BASE_URL}${API.MOVIES}?page=${payload?.pagination ? payload?.pagination : ""}&title=${payload?.title ? payload?.title : ""}`, {

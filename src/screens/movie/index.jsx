@@ -32,7 +32,7 @@ const Movie = () => {
 				<MovieDetail>
 					<MovieDetail.Header image={data.poster_path} />
 					<MovieDetail.Content title={data.title} genre={data.categories} productionYear={data.production_year} summary={data.overview} imdb={data.vote_average} />
-					<MovieDetail.Rate id={data.id} />
+					<MovieDetail.Rate id={data.id} similar={data?.related_movies} rating={data?.rating} />
 				</MovieDetail>
 			)}
 		</main>

@@ -44,7 +44,6 @@ const Movie = ({children, image, id, isDrawer = false}) => {
 				}}>
 				{children}
 			</div>
-			<Toaster />
 		</div>
 	);
 };

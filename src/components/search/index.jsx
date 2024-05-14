@@ -1,18 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {Button} from "@/components/ui/button";
-import {Form, FormField, FormItem} from "@/components/ui/form";
-import {Input} from "@/components/ui/input";
-import {Label} from "@/components/ui/label";
-import {logInStatus} from "@/states/feature/auth/login";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {useForm} from "react-hook-form";
-import {useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-import Loading from "../loading";
-import showToast from "../toast";
-import {Toaster} from "../ui/toaster";
+import { Form, FormField, FormItem } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import useFormHandlers from "./useFormHandlers";
-import validationSchema, {defaultValues} from "./validationSchema";
+import validationSchema, { defaultValues } from "./validationSchema";
 
 const Search = () => {
 	const form = useForm({resolver: zodResolver(validationSchema), defaultValues, mode: "onChange"});
@@ -37,12 +29,14 @@ const Search = () => {
 			clearInfo();
 		};
 	}, [title]);
-    
 
 	return (
 		<div
-			className='fixed left-[270px] bottom-6 -translate-x-1/2
-        w-[500px] rounded-md bg-slate-950 p-4 overflow-auto
+			className='fixed left-[270px] bottom-24 -translate-x-1/2
+		w-[200px] md:bottom-6 lg:bottom-6 xl:bottom-6 2xl:bottom-6
+        md:w-[500px] lg:w-[500px] xl:w-[500px] 2xl:w-[500px]
+		md:p-4 lg:p-4 xl:p-4 2xl:p-4
+		 rounded-md bg-slate-950 p-1 overflow-auto
         z-10 border border-[1px] border-white shadow-xxl'>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit, onError)}>
@@ -53,7 +47,7 @@ const Search = () => {
 							render={({field}) => (
 								<FormItem>
 									<div className='grid gap-2 font-bold '>
-										<Input className='bg-black border-none focus-visible:ring-offset-0 text-white' id='title' type='text' placeholder='Movie name...' {...field} autoComplete='title' />
+										<Input className='bg-slate-950 border-none focus-visible:ring-offset-0 text-white' id='title' type='text' placeholder='Movie name...' {...field} autoComplete='title' />
 									</div>
 								</FormItem>
 							)}

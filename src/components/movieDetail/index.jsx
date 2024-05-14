@@ -49,23 +49,27 @@ MovieDetail.Content = ({title, genre, productionYear, imdb, summary}) => {
 	);
 };
 
-MovieDetail.Similar = () => {
+MovieDetail.Similar = ({similar}) => {
 	return (
 		<div className='flex mr-2 flex-1 '>
-			{[...Array(3)].map((_, index) => {
+			{similar.map((movie, index) => {
 				return (
 					<div
+						onClick={() => {
+							window.location.href = `/movie/${movie.id}`;
+						}}
 						key={index}
 						className=' border border-dashed p-4 w-full
-                            bg-cover bg-no-repeat bg-center
-                            grayscale
+							bg-contain bg-no-repeat bg-center
+							grayscale
                             hover:scale-105
                             hover:grayscale-0
                             transition-transform
+							cursor-pointer
                     
                     '
 						style={{
-							backgroundImage: `url(${"https://bgfilmcilik.com/media/2020/04/TOY-STORY-4.jpg"})`,
+							backgroundImage: `url(${movie.poster_path})`,
 						}}
 					/>
 				);
@@ -75,7 +79,7 @@ MovieDetail.Similar = () => {
 };
 
 // eslint-disable-next-line react/display-name, react/prop-types
-MovieDetail.Rate = ({id}) => (
+MovieDetail.Rate = ({id, similar,rating}) => (
 	<div
 		className='        
     col-span-1
@@ -84,8 +88,8 @@ MovieDetail.Rate = ({id}) => (
     row-span-1 ml-2
     flex flex-col
     '>
-		<Rate />
-		<MovieDetail.Similar />
+		<Rate movieId={id} currentRating={rating}/>
+		<MovieDetail.Similar similar={similar} />
 	</div>
 );
 

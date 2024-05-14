@@ -13,6 +13,12 @@ import getMovieSaga from "../services/movie/getMovie";
 import getMovieDetailSlice from "../feature/movie/getMovieDetail";
 import getMovieDetailSaga from "../services/movie/getMovieDetail";
 
+import addRatingSlice from "../feature/rating/addRating";
+import addRatingSaga from "../services/rating/addRating";
+
+import getRecommendationSlice from "../feature/recommendation/getRecommendation";
+import getRecommendationSaga from "../services/recommendation/getRecommendation";
+
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
@@ -20,7 +26,9 @@ const store = configureStore({
 		logInSlice,
 		signUpSlice,
 		getMovieSlice,
+		addRatingSlice,
 		getMovieDetailSlice,
+		getRecommendationSlice,
 	},
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
 });
@@ -28,6 +36,8 @@ const store = configureStore({
 sagaMiddleware.run(logInSaga);
 sagaMiddleware.run(signUpSaga);
 sagaMiddleware.run(getMovieSaga);
+sagaMiddleware.run(addRatingSaga);
 sagaMiddleware.run(getMovieDetailSaga);
+sagaMiddleware.run(getRecommendationSaga);
 
 export default store;

@@ -4,6 +4,8 @@ const API = {
 	SIGNUP: "/register",
 	MOVIES: "/movies",
 	MOVIE: "/movie",
+	RATING: "/rating",
+	RECOMMENDATION: "/recommendation",
 };
 
 export default API;
