@@ -1,1 +1,1 @@
-https://github.com/IEmreOzkayaI/movie-recommendation-front/assets/72611040/8c901013-60e1-4ea4-a959-160825c95159
+https://github.com/IEmreOzkayaI/movie-recommendation-front/assets/72611040/1ec3c0ed-e4fa-443f-8f5e-f881b875a325
